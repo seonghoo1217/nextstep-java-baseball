@@ -1,8 +1,10 @@
 package study;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class StringTest {
     @Test
@@ -32,5 +34,25 @@ public class StringTest {
         String substringTuple = tupleNumber.substring(1, tupleNumber.length() - 1);
         //then
         assertThat(substringTuple).contains("1","2");
+    }
+
+    @Test
+    @DisplayName("charAt() 메소드를 활용하여 특정 위치의 문자 가져오기")
+    void takeCharacterPositionByCharAt(){
+        //given
+        String target="abc";
+        int position=3;
+        //when
+        if (position>=target.length())throw new StringIndexOutOfBoundsException("Index: "+position+", Size: "+target.length());
+    }
+
+    @Test
+    @DisplayName("charAt()을 통한 범위가 벗어날경우")
+    void invalidRangeOfCharAt(){
+        //then
+        assertThatThrownBy(()->{
+            takeCharacterPositionByCharAt();
+        }).isInstanceOf(StringIndexOutOfBoundsException.class)
+                .hasMessageContaining("Index: 3, Size: 3");
     }
 }
