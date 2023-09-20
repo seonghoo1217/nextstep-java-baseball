@@ -23,4 +23,14 @@ public class StringTest {
         assertThat(commaSplit).contains("1","2");
         assertThat(numberSplit).containsExactly("1");
     }
+
+    @Test
+    void substringToNumberTuple(){
+        //given
+        String tupleNumber="(1,2)";
+        //when
+        String substringTuple = tupleNumber.substring(1, tupleNumber.length() - 1);
+        //then
+        assertThat(substringTuple).contains("1","2");
+    }
 }
