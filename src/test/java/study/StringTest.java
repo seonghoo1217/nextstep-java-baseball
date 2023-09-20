@@ -12,7 +12,7 @@ public class StringTest {
     }
 
     @Test
-    void splitToComma(){
+    void splitToCommaAndNumber(){
         //given
         String commaNumber="1,2";
         String onlyNumber="1";
