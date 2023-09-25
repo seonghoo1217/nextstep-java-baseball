@@ -33,7 +33,7 @@ public class CalculatorTest {
     @ValueSource(strings = {""})
     void validateInputValueTest(String value) {
         assertThatThrownBy(() -> {
-            calculateService.calculate(value);
+            calculateService.inputValueValidateForm(value);
         }).isInstanceOf(IllegalArgumentException.class);
     }
 }
