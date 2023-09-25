@@ -12,15 +12,18 @@ import validate.InputValidate;
 
 import java.util.Scanner;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class CalculatorTest {
 
     private CalculateService calculateService;
+    private InputValidate inputValidate;
 
     @BeforeEach
     void testInitialize(){
         calculateService=new CalculateService();
+        inputValidate=new InputValidate();
     }
 
     @Test
@@ -35,5 +38,18 @@ public class CalculatorTest {
         assertThatThrownBy(() -> {
             calculateService.inputValueValidateForm(value);
         }).isInstanceOf(IllegalArgumentException.class);
+    }
+    @Test
+    void extractNumberToString(){
+        //given
+        String numberString="123";
+        String comString="1+2-3";
+        //when
+        boolean numValidate = inputValidate.validateValueIsNumberType(numberString);
+        boolean comValidate = inputValidate.validateValueIsNumberType(comString);
+
+        //then
+        assertThat(numValidate).isTrue();
+        assertThat(comValidate).isFalse();
     }
 }

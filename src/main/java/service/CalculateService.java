@@ -9,4 +9,10 @@ public class CalculateService {
             if (inputValidate.validateEmptyOrSpaceValue(value)) throw new IllegalArgumentException("Input value is empty");
         }
     }
+
+    public void calculate(String value){
+        if (inputValidate.validateValueIsNumberType(value)) {
+
+        }
+    }
 }
