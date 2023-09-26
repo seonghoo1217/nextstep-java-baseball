@@ -3,7 +3,7 @@ package validate;
 public class InputValidate {
 
     public boolean validateEmptyOrSpaceValue(String value){
-        if (value.matches("^\\s*$")) throw new IllegalArgumentException("Input Value is Empty");
+        if (value.isEmpty()) throw new IllegalArgumentException("Input Value is Empty");
         return true;
     }
 
