@@ -24,9 +24,7 @@ public class InputValidate {
 
     public boolean validateValue(String value){
         if (validateEmptyOrSpaceValue(value)){
-            if (validateValueType(value)){
-                return true;
-            }
+            return validateValueType(value);
         }
         return false;
     }
