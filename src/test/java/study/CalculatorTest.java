@@ -33,7 +33,7 @@ public class CalculatorTest {
     }
 
     @ParameterizedTest
-    @ValueSource(strings = {""})
+    @ValueSource(strings = {""," 123"," 1+2+3","1a23","+++++"})
     void validateInputValueTest(String value) {
         assertThatThrownBy(() -> {
             calculateService.inputValueValidateForm(value);
@@ -49,7 +49,15 @@ public class CalculatorTest {
         boolean comValidate = inputValidate.validateValueIsNumberType(comString);
 
         //then
-        assertThat(numValidate).isTrue();
-        assertThat(comValidate).isFalse();
+        assertThat(numValidate).isFalse();
+        assertThat(comValidate).isTrue();
+    }
+
+    @Test
+    void test(){
+        //given
+        String abc="1 + 2 - 3";
+        //when
+        calculateService.inputValueValidateForm(abc);
     }
 }

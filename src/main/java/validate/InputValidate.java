@@ -16,7 +16,7 @@ public class InputValidate {
     }
 
     public boolean validateValueType(String value){
-        if (validateValueIsNumberType(value)||validateValueIsOperationType(value)) {
+        if (validateValueIsNumberType(value) && validateValueIsOperationType(value)) {
             throw new IllegalArgumentException("Input Value is Not OP or Numeric Type");
         }
         return true;

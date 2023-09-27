@@ -14,7 +14,7 @@ public class CalculateService {
 
     public void inputValueValidateForm(String values){
         for (String value : values.split(" ")){
-            if (inputValidate.validateValue(value))
+            if (inputValidate.validateValue(value));
         }
     }
 
