@@ -1,4 +1,4 @@
-package config;
+package calculate.config;
 
 import java.util.Scanner;
 

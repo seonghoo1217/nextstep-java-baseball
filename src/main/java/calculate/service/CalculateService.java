@@ -1,6 +1,6 @@
-package service;
+package calculate.service;
 
-import validate.InputValidate;
+import calculate.validate.InputValidate;
 
 import java.util.LinkedList;
 import java.util.Queue;
