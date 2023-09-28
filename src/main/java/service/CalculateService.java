@@ -68,6 +68,9 @@ public class CalculateService {
     }
 
     private int divide(int result,int target){
+        if (target == 0) {
+            throw new IllegalArgumentException("Division by zero.");
+        }
         return result/target;
     }
 }
