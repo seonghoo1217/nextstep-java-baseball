@@ -62,4 +62,23 @@ public class CalculatorTest {
     }
 
 
+    @Test
+    void calculateSingleDigitTest(){
+        //given
+        String inputValue= "2 + 3 * 4 / 2";
+        //when
+        int testResult = calculateService.inputValueValidateForm(inputValue);
+        //then
+        assertThat(testResult).isEqualTo(10);
+    }
+
+    @Test
+    void calculateDoubleDigitTest(){
+        //given
+        String inputValue= "12 + 13 * 4 - 5 / 9";
+        //when
+        int testResult = calculateService.inputValueValidateForm(inputValue);
+        //then
+        assertThat(testResult).isEqualTo(10);
+    }
 }
