@@ -54,10 +54,12 @@ public class CalculatorTest {
     }
 
     @Test
-    void test(){
+    void validateFormRunExactlyTest(){
         //given
-        String abc="1 + 2 - 3";
+        String targetValue="1 + 2 - 3";
         //when
-        calculateService.inputValueValidateForm(abc);
+        calculateService.inputValueValidateForm(targetValue);
     }
+
+
 }
