@@ -1,4 +1,4 @@
-package validate;
+package calculate.validate;
 
 public class InputValidate {
 
